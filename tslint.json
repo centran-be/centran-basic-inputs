@@ -15,7 +15,7 @@
     "label-position": true,
     "max-line-length": [
       true,
-      140
+      300
     ],
     "member-access": false,
     "member-ordering": [
@@ -60,7 +60,7 @@
     ],
     "radix": true,
     "semicolon": [
-      "always"
+      "never"
     ],
     "triple-equals": [
       true,

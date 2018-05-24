@@ -1,0 +1,10 @@
+<app-input [inputControl]="formGroup.get(name)" [validationPath]="validationPath" [exceptions]="exceptions" [needed]="needed">
+  <div><l key="{{label}}" *ngIf="label"></l><span *ngIf="needed"> * </span></div>
+  <div class="radio" *ngFor="let button of buttons">
+    <label>
+      <input [formControl]="formGroup.get(name)" type="radio" name="{{formControlName}}" value="{{button.value}}">
+      <l *ngIf="button.label" key="{{button.label}}"></l>
+      <l *ngIf="!button.label" key="{{label}}.{{button.value}}"></l>
+    </label>
+  </div>
+</app-input>

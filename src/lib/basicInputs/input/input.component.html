@@ -1,0 +1,29 @@
+<div class="form-group">
+  <div class="row">
+    <div class="col-lg-4" *ngIf="showLabel">
+      <l *ngIf="label" [key]="label"></l>
+      <l *ngIf="!label" [key]="name"></l><span *ngIf="needed"> * </span>
+    </div>
+    <div [ngClass]="{'col-lg-8': showLabel , 'col-lg-12': !showLabel}">
+      <ng-content></ng-content>
+      <div *ngIf="inputControl">
+        <div *ngIf="inputControl.invalid && (inputControl.dirty || inputControl.touched)"
+             class="infobulle-danger">
+          <div *ngFor="let key of errorKeys()">
+            <l *ngIf="key === 'pattern'" key="ERROR.INVALID_FORMAT"></l>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="this.inputControl">
+        <div *ngIf="this.getExceptions()">
+        <div *ngFor="let exception of this.getExceptions()">
+          <div *ngIf="exception.type === 'VALIDATION'" class="infobulle-danger">
+          <l key="ERROR.{{exception['errorCode']}}"></l>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<app-input [inputControl]="formGroup.get(name)" [label]="label" [name]="name" [validationPath]="validationPath" [exceptions]="exceptions" [needed]="needed">
+  <div class="form-group">
+    <div class="input-group" (blur)="blur.emit()" >
+      <my-date-picker name="mydate" [options]="myDatePickerOptions"
+          (dateChanged)="onDateChanged($event)"  [(ngModel)]="model" style="min-width: 200px "></my-date-picker>
+    </div>
+  </div>
+</app-input>

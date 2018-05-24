@@ -1,0 +1,7 @@
+
+<app-input [label]="label" [name]="name" [inputControl]="formControl" [validationPath]="validationPath"
+           [exceptions]="exceptions" [needed]="needed">
+  <textarea class="form-control" rows="{{rows}}" cols="{{cols}}" [formControl]="formControl" placeholder="{{placeholder | label | async}}"
+            name="{{name}}" (blur)="blur.emit()"></textarea>
+
+</app-input>

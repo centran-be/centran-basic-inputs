@@ -1,0 +1,8 @@
+
+<app-input [label]="label" [name]="name" [inputControl]="formControl" [validationPath]="validationPath"
+           [exceptions]="exceptions" [needed]="needed" [alerts]="alerts">
+  <input class="form-control" [formControl]="formControl" placeholder="{{placeholder | label | async}}" type="text"
+         name="{{name}}" (blur)="blur.emit()" pattern="^[0-9]*" [textMask]="{mask : mask, guide:false}">
+
+</app-input>
+

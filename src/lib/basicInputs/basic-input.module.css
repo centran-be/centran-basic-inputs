@@ -1,0 +1,31 @@
+.infobulle {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-left-style: solid;
+    border-width: 1rem;
+    border-color: rgb(88, 162, 234);
+    background-color: #f3f4f7;
+    color: black;
+    padding: 1rem;
+}
+
+.infobulle-alert {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-left-style: solid;
+    border-width: 1rem;
+    border-color: #f9df58;
+    background-color: #fceda2;
+    color: black;
+    padding: 1rem;
+}
+.infobulle-danger {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-left-style: solid;
+    border-width: 1rem;
+    border-color: #f5384d;
+    background-color: #fbafb7;
+    color: black;
+    padding: 1rem;
+}

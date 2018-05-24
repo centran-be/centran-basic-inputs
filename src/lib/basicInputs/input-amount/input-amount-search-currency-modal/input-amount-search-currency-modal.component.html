@@ -1,0 +1,49 @@
+<div class="modal-header">
+  <h4>
+    <l key="list.searchTitle"></l>
+  </h4>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <div class="row">
+      <div class="input-group">
+        <input class="form-control" type="text" [formControl]="searchCurrencyForm.get('search')"/>
+        <button class="btn btn-fin01" (click)="search()"><i class="fa fa-search fa-2x"></i></button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="searchResult" class="row">
+    <table class="table">
+      <thead>
+      <tr>
+        <th><l key="list.isoCodeCurrency"></l></th>
+        <th><l key="list.currencyName"></l></th>
+        <th><l key="list.tags"></l></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let result of searchResult">
+        <td>{{result.key}}</td>
+        <td>{{result.valueNl}}</td>
+        <td><i class="fa fa-list fa-2x" (click)="showTags(result.tags)"></i></td>
+        <td><i class="fa fa-check-circle fa-2x" (click)="chooseCurrency(result.key)"></i></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="infobulle col-12" *ngIf="searchTags">
+      <i class="fa fa-times float-right" (click)="searchTags = null"></i>
+      <ul>
+        <li *ngFor="let tag of searchTags">
+          {{tag}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('EUR')">Cancel</button>
+</div>

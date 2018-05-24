@@ -1,0 +1,17 @@
+<app-input [inputControl]="formGroup.get(name).get('Amount')" [label]="label" [name]="name" [validationPath]="validationPath.concat('Amount')" [exceptions]="exceptions" [needed]="needed">
+  <div class="input-group">
+    <input class="form-control" [formControl]="formGroup.get(name).get('Amount')"
+           placeholder="{{placeholder | label | async}}" pattern="^[0-9]+(\.[0-9]{1,2}){0,1}$"
+           type="text"
+           name="{{name}}">
+    <select [formControl]="formGroup.get(name).get('Currency')" class="form-control-addon" name="{{name}}.currency">
+      <option selected disabled>
+      </option>
+      <option *ngFor="let item of currencies" value="{{item.key}}">
+        {{item.key}}
+      </option>
+    </select>
+    <button class="btn btn-fin01" (click)="showSearchModal()"><l key="searchCurrency"></l></button>
+  </div>
+
+</app-input>

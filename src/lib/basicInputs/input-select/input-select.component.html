@@ -1,0 +1,9 @@
+<app-input [label]="name" [validationPath]="validationPath" [exceptions]="exceptions" [needed]="needed">
+  <select [formControl]="formGroup.get(name)" class="form-control" name="{{name}}">
+    <option hidden [value]="vide">-- select --</option>
+    <option class="option" *ngFor="let item of items" value="{{item}}">
+      <l key="inputsList.{{item}}"></l>
+    </option>
+  </select>
+</app-input>
+

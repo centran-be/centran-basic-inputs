@@ -1,0 +1,10 @@
+<div *ngIf="formControlChoice">
+  <label *ngIf="!hide || (formControlChoice.value == '' || formControlChoice.value == value)">
+    <input type="radio" (click)="toggle()" [checked]="formControlChoice.value == value">
+    <l *ngIf="label" key="{{label}}"></l>
+    <l *ngIf="!label" key="{{name}}.{{value}}"></l>
+  </label>
+  <div class="content">
+    <ng-content *ngIf="formControlChoice.value == value"></ng-content>
+  </div>
+</div>

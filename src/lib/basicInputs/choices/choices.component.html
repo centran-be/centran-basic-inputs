@@ -1,0 +1,17 @@
+<l [key]="label" *ngIf="label"></l> <span *ngIf="needed"> * </span>
+<div>
+  <button class="btn btn-fin01 margin-left" *ngIf="hide" (click)="clearChoices()"><l key="ResetForm"></l></button>
+</div>
+<div class="radio" *ngFor="let choice of choices">
+  <ng-content></ng-content>
+</div>
+
+<div *ngIf="this.inputControl">
+  <div *ngIf="this.getExceptions()">
+    <div *ngFor="let exception of this.getExceptions()">
+      <div *ngIf="exception.type === 'VALIDATION'" class="infobulle-danger">
+        <l key="ERROR.{{exception['errorCode']}}"></l>
+      </div>
+    </div>
+  </div>
+</div>

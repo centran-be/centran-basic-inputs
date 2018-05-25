@@ -1,5 +1,6 @@
 export class BasicInputsConfig {
-    constructor(public currencies: object[]) {
+    constructor(public currencies: object[],
+                public dev : boolean) {
 
     }
 }

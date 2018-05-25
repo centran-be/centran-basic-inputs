@@ -25,9 +25,9 @@ import {BasicInputsConfig} from './basic-inputs.config';
 @NgModule({
   imports: [
     CommonModule,
-    LabelModule.switch(),
     ReactiveFormsModule,
     NgbModule.forRoot(),
+    LabelModule.edition(),
     TextMaskModule,
     MyDatePickerModule,
     FormsModule
